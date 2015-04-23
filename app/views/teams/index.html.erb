@@ -1,0 +1,13 @@
+<h1>班级列表</h1>
+<%= link_to '新建班级', new_team_path %>
+<table>
+	<tr>
+		<th>班级名称</th>
+	</tr>
+
+	<% @teams.each do |team| %>
+		<tr>
+			<td><%= team.team_name %></td>
+		</tr>
+	<% end %>
+</table>
