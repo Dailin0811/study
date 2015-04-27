@@ -1,0 +1,18 @@
+<%= @team.team_name%>班学生列表
+<table>
+	<tr>
+		<th>姓名</th>
+		<th>班级</th>
+		<th>性别</th>
+		<th>年龄</th>
+	</tr>
+
+	<% @students.each do |student| %>
+  <tr>
+	  <td><%= student.student_name %></td>
+		<td><%= student.team.team_name %></td>
+		<td><%= student.sex %></td>
+		<td><%= student.age %></td>
+	</tr>
+	<% end %>
+</table>

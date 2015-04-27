@@ -1,0 +1,19 @@
+<%= form_tag  teacher_teams_path %>
+	<%= label_tag :班级名称 %>
+	<%= label_tag Team.find(params[:team_id]).team_name %><br>
+	<%= hidden_field_tag "team_id",params[:team_id]  %>
+	<%= label_tag :教师姓名 %>
+	<% @teacher_teams=Team.find(params[:team_id]).teacher_teams %>
+	<% Teacher.all.each do |teacher| %>
+		<% if @teacher_teams.find_by_teacher_id(teacher.id)%> 
+			<%= check_box_tag "teacher_ids[]", teacher.id,true%>
+	  <% else %>
+	  	<%= check_box_tag "teacher_ids[]", teacher.id %>
+		<% end %>
+		<%= label_tag teacher.teacher_name %>	
+	<% end %>
+	<br>
+	<%= submit_tag %>
+
+
+

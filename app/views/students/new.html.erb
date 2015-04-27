@@ -1,0 +1,31 @@
+<%= form_for :student, url:students_path do |f| %>
+	
+	
+	<p>
+		<%= f.label :姓名 %><br>
+		<%= f.text_field :student_name %>
+	</p>
+
+	<p>
+		<%= f.label :性別 %><br>
+		<%= f.radio_button(:sex,"男") %>
+		<%= label_tag(:sex_man,"男") %>
+		<%= f.radio_button(:sex,"女") %>
+		<%= label_tag(:sex_woman,"女") %>
+	</p>
+  
+	<p>
+		<%= f.label :班级 %><br>
+		<%= f.select :team_id, Team.all.collect {|t| [ t.team_name, t.id ] } %>
+	</p>
+
+	<p>
+		<%= f.label :年齡 %><br>
+		<%= f.text_field :age %>
+	</p>
+
+	<p>
+		<%= f.submit :添加%>
+	</p>
+
+<% end %>

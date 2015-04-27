@@ -1,0 +1,12 @@
+<%= form_for :teacher, url:teachers_path do |f| %>
+	
+	<p>
+		<%= f.label :教师姓名 %><br>
+		<%= f.text_field :teacher_name %>
+	</p>
+
+	<p>
+		<%= f.submit :添加%>
+	</p>
+
+<% end %>

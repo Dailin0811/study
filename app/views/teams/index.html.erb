@@ -8,6 +8,8 @@
 	<% @teams.each do |team| %>
 		<tr>
 			<td><%= team.team_name %></td>
+			<td><%= link_to '查看学生',students_path(:team_id => team.id) %></td>
+			<td><%= link_to '添加老师',new_teacher_team_path(:team_id => team.id) %></td>
 		</tr>
 	<% end %>
 </table>

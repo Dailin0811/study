@@ -1,0 +1,13 @@
+<h1>教师列表</h1>
+<%= link_to '添加老师',new_teacher_path %>
+<table>
+	<tr>
+		<th>教师姓名</th>
+	</tr>
+
+	<% @teachers.each do |teacher| %>
+		<tr>
+			<td><%= teacher.teacher_name %></td>
+		</tr>
+	<% end %>
+</table>
